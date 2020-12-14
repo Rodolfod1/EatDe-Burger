@@ -1,13 +1,24 @@
-// canning out orm file
+// importing my ORM 
 var orm = require("./config/orm.js");
-
-// Select the whole table  .
-orm.selectAll("burgers");
-
-// Insert a new hamburger.
-orm.selectWhere("burgers", "hamburger_name");
-
-// Update devoured status based on the burger_name.
-orm.findWhoHasMost("burgers", "devoured", "burger_name");
-
-module.exports = burger.js;
+//creating the model burger
+var burger = {
+    //first for selecting all 
+    selectAll: (cb)=>{
+        orm.selectAll("burgers", (res)=> {
+         cb(res);
+    });
+    }, 
+    // inserting a new burger name
+    insertOne: (cols, vals, cb) => {
+        orm.insertOne("burgers", cols, vals, (res) =>{
+            cb(res);
+        });
+    },
+    // Update devoured status based on the burger_name.
+    updateOne: (objColVals, condition, cb) => {
+        orm.updateOne("burgers", objColVals, condition,(res)=>{
+            cb(res);
+        });
+    }
+};
+module.exports = burger;
