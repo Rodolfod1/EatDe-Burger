@@ -8,11 +8,10 @@ var PORT = process.env.PORT || 8080;
 
 // MySQL DB Connection Information (remember to change this with our specific credentials)
 var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "N12rocks@01",
-  database: "burger_db"
+  HOST: "us-cdbr-iron-east-02.cleardb.net",
+  USER: "b7e2437887xxxa",
+  PASSWORD: "0200xxx6",
+  DB: "heroku_7643ec736354xxx"
 });
 
 // Initiate MySQL Connection.
