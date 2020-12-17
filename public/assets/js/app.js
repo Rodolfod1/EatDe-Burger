@@ -2,11 +2,10 @@
 
 $( () => { 
     $(".devoured-btn").on("click", (event) => {
-        event.preventDefault();
-        // var id = $(this).data("id");
-        var id = $(this).data("id");
+           event.preventDefault();
+       //getting the ID number from the button 
+        var id = $(".devoured-btn").data("id");
 
-        console.log(id);
         var devouredBurger = {
             devoured: 1
         };
@@ -16,6 +15,7 @@ $( () => {
             data: devouredBurger
         }).then(() => {
             console.log("Burger Devoured");
+            // this refreshes the page; 
             location.reload();
         });
     });
