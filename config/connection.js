@@ -7,11 +7,13 @@ var mysql = require("mysql");
 var PORT = process.env.PORT || 8080;
 
 // MySQL DB Connection Information (remember to change this with our specific credentials)
+//changing to Heroku credentials for deployment using cleardb
 var connection = mysql.createConnection({
-  HOST: "us-cdbr-iron-east-02.cleardb.net",
-  USER: "b7e2437887xxxa",
-  PASSWORD: "0200xxx6",
-  DB: "heroku_7643ec736354xxx"
+  host: "us-cdbr-east-02.cleardb.com",
+  port: 3306,
+  user: "bc1dcf468b782e",
+  password: "f0d483a1",
+  database: "heroku_f4c84a68f966a03"
 });
 
 // Initiate MySQL Connection.
