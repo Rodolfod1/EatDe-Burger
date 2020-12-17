@@ -1,5 +1,5 @@
 // importing my ORM 
-var orm = require("./config/orm.js");
+var orm = require("../config/orm.js");
 //creating the model burger
 var burger = {
     //first for selecting all 
