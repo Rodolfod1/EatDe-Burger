@@ -5,7 +5,8 @@ var burger = {
     //first for selecting all 
     selectAll: (cb)=>{
         orm.selectAll("burgers", (res)=> {
-         cb(res);
+            /// we send the call back from what we read from MYSQL
+           cb(res);
     });
     }, 
     // inserting a new burger name

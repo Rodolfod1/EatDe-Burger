@@ -1,6 +1,6 @@
 <div class="jumbotron text-center">
     <h1 class='display-3'>Seat back, Relax, and Eat a Burger!</h1>
-    <img src='/public/assets/img/BlackBleuBurger.jpg' alt='blackNbleu' width='300px'>
+    <img src="/assets/img/BlackBleuBurger.jpg" alt="blackNbleu" >
 </div>
 <div class='container'>
     <div class="row">
@@ -9,8 +9,8 @@
              {{#each burgers }}
                   {{#unless   devoured}}
                   <li>
-                      {{burgerName}}
-                      <button class="devoured-btn" data-id="{{id}}" data-newDevour="{{newDevour}}">Devour Me</button>
+                      {{burger_name}}
+                      <button class="devoured-btn" data-id="{{Id}}" data-newDevour="{{newDevour}}">Devour Me</button>
                   </li>
                   {{/unless}}
              {{/each}}
@@ -21,7 +21,7 @@
               {{#each burgers }}
                 {{#if devoured}}
                 <li>
-                    {{burgerName}}
+                    {{burger_name}}
                 </li>
                 {{/if}}
               {{/each}}  

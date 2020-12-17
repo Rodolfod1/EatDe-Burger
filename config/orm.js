@@ -12,7 +12,7 @@ var Qmarks = (num) => {
 }
 // Helper function to convert object key/value pairs to SQL syntax
 var objToSql= (ob) => {
-    var Myarr2 = [];
+    var MyAarr = [];
      // loop through the keys and push the key/value as a string int arr
     for (var key in ob) {
       var value = ob[key];
@@ -21,18 +21,20 @@ var objToSql= (ob) => {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        Myarr2.push(key + "=" + value);
+        MyAarr.push(key + "=" + value);
       }
     }
     // translate the whole array to string 
-    return Myarr2.toString();
+    return MyAarr.toString();
   }
 // Creating my ORM object with the three basic methods: Select, Insert , Update
 var orm = {
-    selectAll: (table,cb) => {
-      var queryString = "SELECT * FROM ?? ";
-      connection.query(queryString, [table], (err, result) => {
+    selectAll: (tableInput,cb) => {
+      var queryString = "SELECT * FROM "+ tableInput + ";";
+      console.log(queryString);
+      connection.query(queryString, (err, result) => {
         if (err) throw err;
+        console.log(result);
         cb(result);
       });
     },
@@ -51,7 +53,10 @@ var orm = {
       });
     },
     updateOne: (table, objColVals, condition, cb) => {
-      var queryString ="UPDATE" + table;
+      console.log("set of parameters to parse");
+      console.log(objColVals);
+      console.log(condition);
+      var queryString ="UPDATE " + table;
       queryString += " SET ";
       queryString += objToSql(objColVals);
       queryString += " WHERE ";
