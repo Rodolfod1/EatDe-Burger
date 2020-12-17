@@ -1,10 +1,15 @@
 body{
-    background-color: burlywood;
+    background-color: #595459;
+    background: #595459;
+    
+}
+.jumbotron {
+    background:#595459 ;
 }
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background:#F2A950;
   }
   
   .label {
@@ -21,4 +26,6 @@ li {
     margin-bottom: 5px;
   }
   
-  
+  .devoured-btn {
+      background: #888C04;
+  }
